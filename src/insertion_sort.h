@@ -15,7 +15,7 @@ void insertionSort(RANDOM_ACCESS_ITR _first, RANDOM_ACCESS_ITR _last)
         {
             auto temp = std::move(*previous);
             *previous = *current;
-            *current = std::move(temp);()
+            *current = std::move(temp);
             --current;
             --previous;
         }
