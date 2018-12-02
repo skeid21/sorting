@@ -9,18 +9,14 @@ RANDOM_ACCESS_ITR partition(RANDOM_ACCESS_ITR _first, RANDOM_ACCESS_ITR _last)
         {
             if (current != low)
             {
-                auto temp = std::move(*current);
-                *current = *low;
-                *low = std::move(temp);
+                std::swap(*current, *low);
             }
             low++;
         }
     }
     if (low != _last)
     {
-        auto temp = std::move(*low);
-        *low = *_last;
-        *_last = std::move(temp);
+        std::swap(*low,*_last);
     }
 
     return low;

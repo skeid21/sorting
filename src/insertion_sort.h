@@ -1,4 +1,4 @@
-
+#include <algorithm>
 template <typename RANDOM_ACCESS_ITR>
 void insertionSort(RANDOM_ACCESS_ITR _first, RANDOM_ACCESS_ITR _last)
 {
@@ -13,9 +13,7 @@ void insertionSort(RANDOM_ACCESS_ITR _first, RANDOM_ACCESS_ITR _last)
         auto previous = marker - 1;
         while (current != _first && *previous > *current)
         {
-            auto temp = std::move(*previous);
-            *previous = *current;
-            *current = std::move(temp);
+            std::swap(*current, *previous);
             --current;
             --previous;
         }
