@@ -43,13 +43,47 @@ TEST(QuickSort, SortsBackwardSortedList)
     ASSERT_TRUE(isSorted(testVector));
 }
 
-TEST(QuickSort, SortsSortsRandomList)
+TEST(QuickSort, SortsSortsOne)
 {
     auto testVector = std::vector<int>();
-    for (size_t scan = 0; scan < 100; ++scan)
+    for (size_t scan = 0; scan < 1; ++scan)
     {
         testVector.push_back(std::rand());
     }
     quickSort(testVector.begin(), testVector.end());
     ASSERT_TRUE(isSorted(testVector));
 }
+
+TEST(QuickSort, SortsSortsTwo)
+{
+    auto testVector = std::vector<int>();
+    for (size_t scan = 0; scan < 2; ++scan)
+    {
+        testVector.push_back(std::rand());
+    }
+    quickSort(testVector.begin(), testVector.end());
+    ASSERT_TRUE(isSorted(testVector));
+}
+
+TEST(QuickSort, SortsSortsAFew)
+{
+    auto testVector = std::vector<int>();
+    for (size_t scan = 0; scan < 13; ++scan)
+    {
+        testVector.push_back(std::rand());
+    }
+    quickSort(testVector.begin(), testVector.end());
+    ASSERT_TRUE(isSorted(testVector));
+}
+
+TEST(QuickSort, SortsSortsMany)
+{
+    auto testVector = std::vector<int>();
+    for (size_t scan = 0; scan < 1000; ++scan)
+    {
+        testVector.push_back(std::rand()%200);
+    }
+    quickSort(testVector.begin(), testVector.end());
+    ASSERT_TRUE(isSorted(testVector));
+}
+

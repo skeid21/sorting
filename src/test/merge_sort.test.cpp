@@ -43,13 +43,47 @@ TEST(MergeSort, SortsBackwardSortedList)
     ASSERT_TRUE(isSorted(testVector));
 }
 
-TEST(MergeSort, SortsSortsRandomList)
+TEST(MergeSort, SortsSortsOne)
 {
     auto testVector = std::vector<int>();
-    for (size_t scan = 0; scan < 100; ++scan)
+    for (size_t scan = 0; scan < 1; ++scan)
     {
         testVector.push_back(std::rand());
     }
     mergeSort(testVector.begin(), testVector.end());
     ASSERT_TRUE(isSorted(testVector));
 }
+
+TEST(MergeSort, SortsSortsTwo)
+{
+    auto testVector = std::vector<int>();
+    for (size_t scan = 0; scan < 2; ++scan)
+    {
+        testVector.push_back(std::rand());
+    }
+    mergeSort(testVector.begin(), testVector.end());
+    ASSERT_TRUE(isSorted(testVector));
+}
+
+TEST(MergeSort, SortsSortsAFew)
+{
+    auto testVector = std::vector<int>();
+    for (size_t scan = 0; scan < 13; ++scan)
+    {
+        testVector.push_back(std::rand());
+    }
+    mergeSort(testVector.begin(), testVector.end());
+    ASSERT_TRUE(isSorted(testVector));
+}
+
+TEST(MergeSort, SortsSortsMany)
+{
+    auto testVector = std::vector<int>();
+    for (size_t scan = 0; scan < 1000; ++scan)
+    {
+        testVector.push_back(std::rand()%200);
+    }
+    mergeSort(testVector.begin(), testVector.end());
+    ASSERT_TRUE(isSorted(testVector));
+}
+
